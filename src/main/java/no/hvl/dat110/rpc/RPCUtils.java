@@ -9,32 +9,20 @@ public class RPCUtils {
 	public static byte[] encapsulate(byte rpcid, byte[] payload) {
 		
 		byte[] rpcmsg = null;
-		
-		// TODO - START
-		
+
 		// Encapsulate the rpcid and payload in a byte array according to the RPC message syntax / format
-		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO - END
-		
+		rpcmsg = ByteBuffer.allocate(payload.length + 1).put(rpcid).put(payload).array();
+
 		return rpcmsg;
 	}
 	
 	public static byte[] decapsulate(byte[] rpcmsg) {
 		
 		byte[] payload = null;
-		
-		// TODO - START
-		
+
 		// Decapsulate the rpcid and payload in a byte array according to the RPC message syntax
-		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO - END
-		
+		payload = Arrays.copyOfRange(rpcmsg, 1, rpcmsg.length);
+
 		return payload;
 		
 	}
